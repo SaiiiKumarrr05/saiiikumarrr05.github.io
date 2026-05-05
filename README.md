@@ -2,7 +2,7 @@
 
 A personal portfolio website built with pure HTML, CSS, and Three.js — no frameworks, no build step, no npm. Just drop and deploy.
 
-**Live Site:** [saikumarr05.github.io/saikumar_portfolio](https://saiiikumarrr05.github.io/Saikumar_Portfolio/)
+**Live Site:** [saikumarr05.github.io/saikumar_portfolio](https://saiiikumarrr05.github.io/)
 
 ---
 
