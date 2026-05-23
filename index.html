@@ -96,7 +96,12 @@
   .detail-key { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; min-width: 100px; }
   .detail-val { font-size: 14px; color: var(--text); }
 
-  #skills .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; }
+  #skills .skills-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  gap: 24px;
+  align-items: stretch;
+}
   .skill-card { background: var(--surface); border: 1px solid var(--border); padding: 32px; transition: all 0.4s; position: relative; overflow: hidden; }
   .skill-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent2), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
   .skill-card:hover { background: #111118; border-color: rgba(160,240,192,0.15); }
@@ -214,7 +219,7 @@
 <section id="hero">
   <div class="hero-label">AI/ML Engineer — Woxsen University</div>
   <h1 class="hero-name">Saikumar<span class="line2">Potturi</span></h1>
-  <p class="hero-desc">Building intelligent systems that solve real-world problems — from computer vision to scalable web applications.</p>
+  <p class="hero-desc">Building intelligent systems that solve real-world problems — from computer vision to scalable web applications. VibeCoder</p>
   <div class="hero-cta">
     <a href="#projects" class="btn btn-primary">View Projects</a>
     <a href="mailto:Saikumarpotturi05@gmail.com" class="btn btn-outline">Get in Touch</a>
@@ -222,6 +227,7 @@
   <div class="hero-scroll">Scroll to explore</div>
   <div class="hero-stat-block">
     <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label">CV Projects</div></div>
+    <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label">FSD Projects</div></div>
     <div class="stat-item"><div class="stat-num">3rd</div><div class="stat-label">AgentX Hackathon</div></div>
     <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Certifications</div></div>
   </div>
@@ -237,7 +243,6 @@
     <span class="marquee-item"><span class="dot">✦</span>NLP</span>
     <span class="marquee-item"><span class="dot">✦</span>Node.js</span>
     <span class="marquee-item"><span class="dot">✦</span>AWS</span>
-    <span class="marquee-item"><span class="dot">✦</span>Vite</span>
     <span class="marquee-item"><span class="dot">✦</span>SQL</span>
     <span class="marquee-item"><span class="dot">✦</span>Python</span>
     <span class="marquee-item"><span class="dot">✦</span>TensorFlow</span>
@@ -249,6 +254,12 @@
     <span class="marquee-item"><span class="dot">✦</span>AWS</span>
     <span class="marquee-item"><span class="dot">✦</span>Vite</span>
     <span class="marquee-item"><span class="dot">✦</span>SQL</span>
+    <span class="marquee-item"><span class="dot">✦</span>SpaCy</span>
+    <span class="marquee-item"><span class="dot">✦</span>NLTK</span>
+    <span class="marquee-item"><span class="dot">✦</span>RAG</span>
+
+
+
   </div>
 </div>
 
@@ -275,10 +286,11 @@
 <section id="skills">
   <div class="section-header reveal"><span class="section-num">02</span><h2 class="section-title">Skills</h2><div class="section-line"></div></div>
   <div class="skills-grid">
-    <div class="skill-card reveal"><div class="skill-icon">🤖</div><div class="skill-cat">Core Domain</div><div class="skill-name">AI / Machine Learning</div><div class="skill-tags"><span class="tag">TensorFlow</span><span class="tag">Neural Networks</span><span class="tag">Computer Vision</span><span class="tag">NLP</span><span class="tag">Deep Learning</span></div></div>
-    <div class="skill-card reveal"><div class="skill-icon">🐍</div><div class="skill-cat">Languages</div><div class="skill-name">Programming</div><div class="skill-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Java</span></div></div>
-    <div class="skill-card reveal"><div class="skill-icon">🌐</div><div class="skill-cat">Development</div><div class="skill-name">Web & Full-Stack</div><div class="skill-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">HTML/CSS</span><span class="tag">Supabase</span><span class="tag">Vite</span></div></div>
-    <div class="skill-card reveal"><div class="skill-icon">🛠️</div><div class="skill-cat">Tools & Cloud</div><div class="skill-name">Tools</div><div class="skill-tags"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">Jupyter</span><span class="tag">MediaPipe</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Core Domain</div><div class="skill-name">AI / Machine Learning</div><div class="skill-tags"><span class="tag">TensorFlow</span><span class="tag">Neural Networks</span><span class="tag">Computer Vision</span><span class="tag">Deep Learning</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Languages</div><div class="skill-name">Programming</div><div class="skill-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Development</div><div class="skill-name">Web & Full-Stack</div><div class="skill-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">HTML/CSS</span><span class="tag">Supabase</span><span class="tag">Vite</span><span class="tag">FastAPI</span><span class="tag">Web Sockets</span><span class="tag">Next.js</span><span class="tag">Framer Motion</span><span class="tag">Docker</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Tools & Cloud</div><div class="skill-name">Tools</div><div class="skill-tags"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">Jupyter</span><span class="tag">MediaPipe</span><span class="tag">CUDA</span><span class="tag">NetworkX</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Language AI</div><div class="skill-name"> NLP & LLMs </div><div class="skill-tags"><span class="tag">NLP</span><span class="tag">Text Preprocessing</span><span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">NLTK</span><span class="tag">Ollama</span><span class="tag">Hugging Face Transformation</span></div></div>
   </div>
 </section>
 
@@ -385,7 +397,7 @@
       <div class="patent-sub">Contributed to an AI-powered drone system for agriculture soil monitoring and smart farming. Supports real-time soil analysis, crop monitoring, and precision agriculture. Officially registered under the <strong>Designs Act, 2000</strong> — Government of India.</div>
     </div>
     <div class="patent-badge">Registered Design<br>Patent<br>Apr 2025</div>
-    <a href="https://drive.google.com/file/d/1LBEtEWGj8uTgmkBLm5n-EMx4mEahU6mp/view?usp=sharing" class="patent-link">Patent</a>
+    <a href="https://drive.google.com/file/d/1LBEtEWGj8uTgmkBLm5n-EMx4mEahU6mp/view?usp=sharing" class="patent-link">View-Patent</a>
   </div>
 </section>
 
