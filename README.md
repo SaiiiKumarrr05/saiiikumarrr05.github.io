@@ -82,7 +82,7 @@ saikumar-portfolio/
 ## Contact
 
 - **Email:** Saikumarpotturi05@gmail.com
-- **LinkedIn:** [linkedin.com/in/sai-kumar-553514297](https://www.linkedin.com/in/sai-kumar-553514297/)
+- **LinkedIn:** [https://www.linkedin.com/in/sai-kumar-potturi/](https://www.linkedin.com/in/sai-kumar-potturi/)
 - **GitHub:** [github.com/SaiiiKumarrr05](https://github.com/SaiiiKumarrr05)
 
 ---
