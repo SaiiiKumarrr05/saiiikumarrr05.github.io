@@ -96,22 +96,40 @@
   .detail-key { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; min-width: 100px; }
   .detail-val { font-size: 14px; color: var(--text); }
 
-  #skills .skills-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-  gap: 24px;
-  align-items: stretch;
-}
-  .skill-card { background: var(--surface); border: 1px solid var(--border); padding: 32px; transition: all 0.4s; position: relative; overflow: hidden; }
-  .skill-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent2), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
-  .skill-card:hover { background: #111118; border-color: rgba(160,240,192,0.15); }
-  .skill-card:hover::before { transform: scaleX(1); }
-  .skill-icon { font-size: 28px; margin-bottom: 16px; }
-  .skill-cat { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
-  .skill-name { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-family: 'Space Mono', monospace; font-size: 11px; padding: 4px 10px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 2px; color: var(--muted); transition: all 0.2s; }
-  .skill-card:hover .tag { border-color: rgba(160,240,192,0.2); color: var(--text); }
+  #skills .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 2px;
+  }
+  .skill-card {
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 28px 32px; transition: all 0.4s;
+    position: relative; overflow: hidden;
+  }
+  .skill-card:hover { background: #111118; border-color: rgba(160,240,192,0.12); }
+  .skill-card--lg  { grid-column: span 5; padding: 40px; }
+  .skill-card--md  { grid-column: span 4; }
+  .skill-card--sm  { grid-column: span 3; }
+  .skill-card--full{ grid-column: span 12; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; padding: 28px 32px; }
+  .skill-card::after {
+    content: attr(data-index);
+    position: absolute; bottom: 20px; right: 24px;
+    font-family: 'Space Mono', monospace; font-size: 48px; font-weight: 800;
+    color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none;
+  }
+  .skill-cat { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+  .skill-name { font-size: 18px; font-weight: 700; margin-bottom: 18px; letter-spacing: -0.01em; }
+  .skill-card--lg .skill-name { font-size: 24px; margin-bottom: 22px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    padding: 4px 10px; background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border); border-radius: 2px;
+    color: var(--muted); transition: all 0.2s;
+  }
+  .skill-card:hover .tag { border-color: rgba(160,240,192,0.18); color: var(--text); }
+  .skill-divider { width: 32px; height: 1px; background: var(--accent); opacity: 0.4; margin-bottom: 18px; }
 
   #projects .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
   .project-card { background: var(--surface); border: 1px solid var(--border); padding: 40px; position: relative; overflow: hidden; transition: all 0.4s; cursor: none; }
@@ -133,13 +151,34 @@
   .project-visual { height: 180px; background: linear-gradient(135deg, rgba(160,240,192,0.05) 0%, rgba(91,143,255,0.05) 100%); border: 1px solid var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 64px; position: relative; overflow: hidden; }
   .project-visual::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 31px), repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 31px); }
 
-  #experience .exp-grid { display: flex; flex-direction: column; gap: 2px; }
-  .exp-card { background: var(--surface); border: 1px solid var(--border); padding: 36px 40px; display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; transition: all 0.3s; }
-  .exp-card:hover { border-color: rgba(160,240,192,0.15); background: #111118; }
-  .exp-icon { width:72px; height:72px; background:rgba(160,240,192,0.08); border:1px solid rgba(160,240,192,0.15); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; } .exp-icon img { width:65px; height:65px; object-fit:contain; }  .exp-title { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
-  .exp-sub { font-size: 14px; color: var(--muted); line-height: 1.6; }
-  .exp-badge { font-family: 'Space Mono', monospace; font-size: 11px; padding: 6px 14px; background: rgba(160,240,192,0.08); border: 1px solid rgba(160,240,192,0.2); color: var(--accent); border-radius: 2px; white-space: nowrap; letter-spacing: 0.06em; }
-  .exp-badge.blue { background: rgba(91,143,255,0.08); border-color: rgba(91,143,255,0.2); color: var(--accent2); }
+  #experience .exp-grid { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 32px; }
+  #experience .exp-grid::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px; background: linear-gradient(to bottom, var(--accent), transparent);
+    opacity: 0.25;
+  }
+  .exp-card {
+    background: transparent; border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 40px 0 40px 40px;
+    display: grid; grid-template-columns: 64px 1fr auto;
+    gap: 28px; align-items: start; transition: all 0.3s;
+    position: relative;
+  }
+  .exp-card::before {
+    content: ''; position: absolute; left: -36px; top: 48px;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--bg); border: 1px solid var(--accent);
+    transition: background 0.3s;
+  }
+  .exp-card:hover::before { background: var(--accent); }
+  .exp-card:hover { background: transparent; }
+  .exp-icon { width:64px; height:64px; background:rgba(160,240,192,0.06); border:1px solid var(--border); border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .exp-icon img { width:58px; height:58px; object-fit:contain; border-radius:4px; }
+  .exp-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .exp-sub { font-size: 13px; color: var(--muted); line-height: 1.65; max-width: 560px; }
+  .exp-badge { font-family: 'Space Mono', monospace; font-size: 10px; padding: 5px 12px; background: rgba(160,240,192,0.06); border: 1px solid rgba(160,240,192,0.15); color: var(--accent); border-radius: 2px; white-space: nowrap; letter-spacing: 0.08em; margin-top: 4px; }
+  .exp-badge.blue { background: rgba(91,143,255,0.06); border-color: rgba(91,143,255,0.15); color: var(--accent2); }
 
   #certs .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   #certs .certs-row-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 2px; }
@@ -277,19 +316,47 @@
       <div class="detail-row"><span class="detail-key">Email</span><span class="detail-val">Saikumarpotturi05@gmail.com</span></div>
       <div class="detail-row"><span class="detail-key">Phone</span><span class="detail-val">+91 93892 22555</span></div>
       <div class="detail-row"><span class="detail-key">Focus</span><span class="detail-val">AI/ML, Computer Vision, Full-Stack</span></div>
-      <div class="detail-row"><span class="detail-key">Status</span><span class="detail-val" style="color:var(--accent)">● Open to opportunities</span></div>
-    </div>
+      <span class="detail-val" style="color:var(--accent);display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s ease-in-out infinite;box-shadow:0 0 0 0 rgba(160,240,192,0.4);"></span>Open to opportunities</span>    </div>
   </div>
 </section>
 
 <section id="skills">
   <div class="section-header reveal"><span class="section-num">02</span><h2 class="section-title">Skills</h2><div class="section-line"></div></div>
   <div class="skills-grid">
-    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Core Domain</div><div class="skill-name">AI / Machine Learning</div><div class="skill-tags"><span class="tag">TensorFlow</span><span class="tag">Neural Networks</span><span class="tag">Computer Vision</span><span class="tag">Deep Learning</span></div></div>
-    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Languages</div><div class="skill-name">Programming</div><div class="skill-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div></div>
-    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Development</div><div class="skill-name">Web & Full-Stack</div><div class="skill-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">HTML/CSS</span><span class="tag">Supabase</span><span class="tag">Vite</span><span class="tag">FastAPI</span><span class="tag">Web Sockets</span><span class="tag">Next.js</span><span class="tag">Framer Motion</span><span class="tag">Docker</span></div></div>
-    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Tools & Cloud</div><div class="skill-name">Tools</div><div class="skill-tags"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">Jupyter</span><span class="tag">MediaPipe</span><span class="tag">CUDA</span><span class="tag">NetworkX</span></div></div>
-    <div class="skill-card reveal"><div class="skill-icon"></div><div class="skill-cat">Language AI</div><div class="skill-name"> NLP & LLMs </div><div class="skill-tags"><span class="tag">NLP</span><span class="tag">Text Preprocessing</span><span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">NLTK</span><span class="tag">Ollama</span><span class="tag">Hugging Face Transformation</span></div></div>
+    <div class="skill-card skill-card--lg reveal" data-index="01">
+      <div class="skill-cat">Core Domain</div>
+      <div class="skill-divider"></div>
+      <div class="skill-name">AI / Machine Learning</div>
+      <div class="skill-tags"><span class="tag">TensorFlow</span><span class="tag">Neural Networks</span><span class="tag">Computer Vision</span><span class="tag">Deep Learning</span></div>
+    </div>
+    <div class="skill-card skill-card--md reveal" data-index="02">
+      <div class="skill-cat">Languages</div>
+      <div class="skill-divider"></div>
+      <div class="skill-name">Programming</div>
+      <div class="skill-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div>
+    </div>
+    <div class="skill-card skill-card--sm reveal" data-index="03">
+      <div class="skill-cat">Tools & Cloud</div>
+      <div class="skill-divider"></div>
+      <div class="skill-name">Tools</div>
+      <div class="skill-tags"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">Jupyter</span><span class="tag">MediaPipe</span><span class="tag">CUDA</span><span class="tag">NetworkX</span></div>
+    </div>
+    <div class="skill-card skill-card--full reveal" data-index="04">
+      <div>
+        <div class="skill-cat">Development</div>
+        <div class="skill-divider"></div>
+        <div class="skill-name">Web & Full-Stack</div>
+      </div>
+      <div class="skill-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">HTML/CSS</span><span class="tag">Supabase</span><span class="tag">Vite</span><span class="tag">FastAPI</span><span class="tag">WebSockets</span><span class="tag">Next.js</span><span class="tag">Framer Motion</span><span class="tag">Docker</span></div>
+    </div>
+    <div class="skill-card skill-card--full reveal" data-index="05">
+      <div>
+        <div class="skill-cat">Language AI</div>
+        <div class="skill-divider"></div>
+        <div class="skill-name">NLP & LLMs</div>
+      </div>
+      <div class="skill-tags"><span class="tag">NLP</span><span class="tag">Text Preprocessing</span><span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">NLTK</span><span class="tag">Ollama</span><span class="tag">Hugging Face</span></div>
+    </div>
   </div>
 </section>
 
@@ -338,9 +405,9 @@
 
 <section id="experience">
   <div class="section-header reveal"><span class="section-num">04</span><h2 class="section-title">Experience</h2><div class="section-line"></div></div>
-  <div class="exp-grid" style="gap: 16px;">
+  <div class="exp-grid">
 
-    <div class="exp-card reveal" style="border-left: 3px solid var(--accent2); padding: 32px 40px;">
+    <div class="exp-card reveal" >
       <div class="exp-icon">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwFIfzLV3pZF2HflebXqgRWAEqP2C9PyN1Ag&s" alt="InAmigos Logo">
     </div>   
@@ -351,7 +418,7 @@
       </div>
       <div class="exp-badge blue">Internship</div>
     </div>
-    <div class="exp-card reveal" style="border-left: 3px solid var(--accent2); padding: 32px 40px;">
+    <div class="exp-card reveal">
       <div class="exp-icon">
         <img src="https://www.geospatialworld.net/wp-content/uploads/2019/09/nrsc.jpg" alt="NRSC Logo">
     </div>
