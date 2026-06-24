@@ -50,8 +50,7 @@ A personal portfolio website built with pure HTML, CSS, and Three.js — no fram
 ## Getting Started
 
 ```bash
-git clone https://saiiikumarrr05.github.io/Saikumar_Portfolio/
-cd saikumar-portfolio
+git clone https://saiiikumarrr05.github.io/
 # open index.html in your browser — no server needed
 ```
 
@@ -64,7 +63,7 @@ cd saikumar-portfolio
 3. Save — your site goes live at:
 
 ```
-https://saiiikumarrr05.github.io/Saikumar_Portfolio/
+https://saiiikumarrr05.github.io/
 ```
 
 ---
