@@ -72,7 +72,7 @@ https://saiiikumarrr05.github.io/
 
 ```
 saikumar-portfolio/
-├── index.html      # entire site — HTML + CSS + JS in one file
+├── index.html      
 └── README.md
 ```
 
