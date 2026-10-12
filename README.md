@@ -56,7 +56,6 @@ git clone https://github.com/SaiiiKumarrr05/saiiikumarrr05.github.io.git
 # open index.html in your browser — no server needed
 ```
 
----
 
 ## Deployment (GitHub Pages)
 
