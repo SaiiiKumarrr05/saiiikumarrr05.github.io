@@ -58,7 +58,6 @@ git clone https://github.com/SaiiiKumarrr05/saiiikumarrr05.github.io.git
 
 
 
-1. Push `index.html` to the `main` branch
 2. Go to **Settings → Pages → Source → main / root**
 
 
