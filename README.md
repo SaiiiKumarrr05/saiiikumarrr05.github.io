@@ -58,9 +58,6 @@ git clone https://github.com/SaiiiKumarrr05/saiiikumarrr05.github.io.git
 
 
 
-2. Go to **Settings → Pages → Source → main / root**
-
-
 ## Project Structure
 
 ```
